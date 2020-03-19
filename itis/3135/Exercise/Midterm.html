@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Update Expenditure</title>
+    <link rel="stylesheet" href="./Midterm.css">
+    <script src="./Midterm.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <h1>Update Expenditure</h1>
+      <!--add the form-->
+      <form id="your_details" name="your_details" action="#">
+
+        <h3>Enter your details</h3>
+
+        <label for="name">Name</label>
+        <input name="name" id="name" placeholder="Enter your name" required>
+
+        <label for="email">Email</label>
+        <input name="email" id="email" type="email" placeholder="Enter your name" required>
+
+        <input type="submit" value="Submit">
+      </form>
+
+      <div class="form-item">
+        <label>
+          <span>Choose a day</span>
+        </label>
+        <select id="day" name="day">
+          <option value="Sunday">Sunday</option>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+        </select>
+      </div>
+
+      <label for="expenditure">Enter the expenditure</label>
+      <input name="expenditure" id="expenditure" required type="number">
+
+      <input type="submit" value="Update" id="update">
+      <input type="submit" value="Total Expenditure" id="total_expenditure">
+
+      <div>
+        <label for="total_expenditure_display">Total Expenditure</label>
+        <input name="total_expenditure_display" id="total_expenditure_display">
+      </div>
+
+      <!--header for showing maximum exp. amount and day-->
+      <strong id="show_max">Show Maximum Expenditure Day and Amount:</strong>
+      <!--div for showing maximum exp. amount and day-->
+      <p id="showMax"></p>
+
+    </main>
+    <footer>
+      <br/>
+      <a href="https://validator.w3.org/">Validate HTML</a>
+      <br/>
+      <a href="https://jigsaw.w3.org/css-validator/">Validate CSS</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Employee table</title>
+    <meta name="description" content="3135 Activity" />
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="./Love-Activity2.css" />
+  </head>
+
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th id="department">Department</th>
+          <th id="name">Name</th>
+          <th id="email">E-mail</th>
+          <th class="right" id="yos">Years of Service</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2" headers="department"><b>Editorial</b></td>
+          <td headers="name">Joel Murach</td>
+          <td headers="email">joelmurach@yahoo.com</td>
+          <td class="right" headers="yos">22</td>
+        </tr>
+        <tr>
+          <td headers="name">Anne Boehm</td>
+          <td headers="email">anne@murach.com</td>
+          <td class="right" headers="yos">34</td>
+        </tr>
+        <tr>
+          <td rowspan="3" headers="department"><b>Marketing</b></td>
+          <td headers="name">Zak Ruvalcaba</td>
+          <td headers="email">zak@modulemedia.com</td>
+          <td class="right" headers="yos">4</td>
+        </tr>
+        <tr>
+          <td headers="name">Judy Taylor</td>
+          <td headers="email">judy@murach.com</td>
+          <td class="right" headers="yos">39</td>
+        </tr>
+        <tr>
+          <td headers="name">Cyndi Vasquez</td>
+          <td headers="email">cyndi@murach.com</td>
+          <td class="right" headers="yos">10</td>
+        </tr>
+        <tr>
+          <td rowspan="2" headers="department"><b>Customer Service</b></td>
+          <td headers="name">Kelly Slivkoff</td>
+          <td headers="email">kelly@murach.com</td>
+          <td class="right" headers="yos">25</td>
+        </tr>
+        <tr>
+          <td headers="name">Juliette Baylon</td>
+          <td headers="email">juliette@murach.com</td>
+          <td class="right" headers="yos">1</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="3" id="tyos">Total Years of Service</th>
+          <td class="right" headers="tyos"><b>105</b></td>
+        </tr>
+      </tfoot>
+    </table>
+    <footer>
+      <a href="https://validator.w3.org/check?uri=referer">Validate HTML</a>
+      <br />
+      <a href="https://jigsaw.w3.org/css-validator/check/referer"
+        >Validate CSS</a
+      >
+    </footer>
+  </body>
+</html>

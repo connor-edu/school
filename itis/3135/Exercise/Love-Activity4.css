@@ -1,0 +1,46 @@
+/*
+  Remove the random black line at the bottom of the original picture
+*/
+#header-image {
+  overflow: hidden;
+  margin-right: 12px;
+}
+
+#header-image img {
+  margin-bottom: -5px;
+  max-width: 275px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header,
+footer {
+  padding: 12px;
+  display: flex;
+}
+
+.green-background {
+  background-color: lightgreen;
+}
+
+header h1 {
+  margin-bottom: 0;
+}
+header h2 {
+  margin-top: 0;
+}
+
+main {
+  padding: 12px;
+}
+
+address {
+  display: inline;
+  padding: 4px;
+  background-color: coral;
+  color: white;
+}
