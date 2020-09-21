@@ -1,9 +1,9 @@
 // Global variables
 let prevCalc = 0;
-let calc = ``;
-const displayScreen = document.getElementById(`txtNumber`);
+let calc = "";
+const displayScreen = document.getElementById("txtNumber");
 
-document.addEventListener(`click`, (e) => {
+document.addEventListener("click", (e) => {
   /**
    * if the clicked element was a number on the keypad,
    * add its value to the "display screen"
@@ -11,8 +11,8 @@ document.addEventListener(`click`, (e) => {
    * Note: this removes the need to repeatly register the same event
    * for multiple elements.
    */
-  if (e.target && e.target.classList.contains(`number`)) {
-    displayScreen.value += e.target.getAttribute(`value`);
+  if (e.target && e.target.classList.contains("number")) {
+    displayScreen.value += e.target.getAttribute("value");
   }
 });
 
@@ -48,8 +48,8 @@ function add() {
   const num = parseFloat(displayScreen.value);
   if (!Number.isNaN(num)) {
     prevCalc = num;
-    displayScreen.value = ``;
-    calc = `Add`;
+    displayScreen.value = "";
+    calc = "Add";
   }
 }
 
@@ -61,8 +61,8 @@ function minus() {
   const num = parseFloat(displayScreen.value);
   if (!Number.isNaN(num)) {
     prevCalc = num;
-    displayScreen.value = ``;
-    calc = `Minus`;
+    displayScreen.value = "";
+    calc = "Minus";
   }
 }
 
@@ -74,8 +74,8 @@ function times() {
   const num = parseFloat(displayScreen.value);
   if (!Number.isNaN(num)) {
     prevCalc = num;
-    displayScreen.value = ``;
-    calc = `Times`;
+    displayScreen.value = "";
+    calc = "Times";
   }
 }
 
@@ -87,8 +87,8 @@ function pow() {
   const num = parseFloat(displayScreen.value);
   if (!Number.isNaN(num)) {
     prevCalc = num;
-    displayScreen.value = ``;
-    calc = `Pow`;
+    displayScreen.value = "";
+    calc = "Pow";
   }
 }
 
@@ -140,13 +140,13 @@ function calculate() {
   const num = parseFloat(displayScreen.value);
   if (!Number.isNaN(num)) {
     let total = prevCalc;
-    if (calc === `Add`) {
+    if (calc === "Add") {
       total += num;
-    } else if (calc === `Minus`) {
+    } else if (calc === "Minus") {
       total -= num;
-    } else if (calc === `Times`) {
+    } else if (calc === "Times") {
       total *= num;
-    } else if (calc === `Pow`) {
+    } else if (calc === "Pow") {
       total = Math.pow(total, num);
     }
 
@@ -155,23 +155,23 @@ function calculate() {
 }
 
 function clear() {
-  displayScreen.value = ``;
+  displayScreen.value = "";
   prevCalc = 0;
-  calc = ``;
+  calc = "";
 }
 
 /**
  * Bind all of our special functions to their respectful buttons.
  */
-document.getElementById(`btnCalc`).addEventListener(`click`, calculate);
-document.getElementById(`btnDecrement`).addEventListener(`click`, decrement);
-document.getElementById(`btnIncrement`).addEventListener(`click`, increment);
-document.getElementById(`btnReset`).addEventListener(`click`, clear);
-document.getElementById(`btnPlus`).addEventListener(`click`, add);
-document.getElementById(`btnMinus`).addEventListener(`click`, minus);
-document.getElementById(`btnTimes`).addEventListener(`click`, times);
-document.getElementById(`btnPow`).addEventListener(`click`, pow);
-document.getElementById(`btnPow2`).addEventListener(`click`, pow2);
-document.getElementById(`btnSqrt`).addEventListener(`click`, sqrt);
-document.getElementById(`btnFloor`).addEventListener(`click`, floor);
-document.getElementById(`btnRound`).addEventListener(`click`, round);
+document.getElementById("btnCalc").addEventListener("click", calculate);
+document.getElementById("btnDecrement").addEventListener("click", decrement);
+document.getElementById("btnIncrement").addEventListener("click", increment);
+document.getElementById("btnReset").addEventListener("click", clear);
+document.getElementById("btnPlus").addEventListener("click", add);
+document.getElementById("btnMinus").addEventListener("click", minus);
+document.getElementById("btnTimes").addEventListener("click", times);
+document.getElementById("btnPow").addEventListener("click", pow);
+document.getElementById("btnPow2").addEventListener("click", pow2);
+document.getElementById("btnSqrt").addEventListener("click", sqrt);
+document.getElementById("btnFloor").addEventListener("click", floor);
+document.getElementById("btnRound").addEventListener("click", round);
