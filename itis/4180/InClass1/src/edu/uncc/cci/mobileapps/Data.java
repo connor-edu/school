@@ -5,6 +5,8 @@
 
 package edu.uncc.cci.mobileapps;
 
+import java.util.Objects;
+
 public class Data {
     String firstname;
     String lastname;
@@ -20,7 +22,13 @@ public class Data {
         String[] parts = line.split(",");
         this.firstname = parts[0];
         this.lastname = parts[1];
-        this.age = Integer.parseInt(parts[2]);
+        try {
+            this.age = Integer.parseInt(parts[2]);
+        }
+        catch (NumberFormatException e) {
+            System.out.println("Invalid Age " + parts[2]);
+            this.age = 0;
+        }
         this.email = parts[3];
         this.gender = parts[4];
         this.city = parts[5];
@@ -29,5 +37,18 @@ public class Data {
 
     public String toString() {
         return "User { name: " + this.firstname + " " + this.lastname + ", age: " + this.age + ", email: " + this.email + ", gender: " + this.gender + ", city: " + this.city + ", state: " + this.state + " }";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Data data = (Data) o;
+        return age == data.age && Objects.equals(firstname, data.firstname) && Objects.equals(lastname, data.lastname) && Objects.equals(email, data.email) && Objects.equals(gender, data.gender) && Objects.equals(city, data.city) && Objects.equals(state, data.state);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstname, lastname, age, email, gender, city, state);
     }
 }

@@ -5,7 +5,9 @@
 
 package edu.uncc.cci.mobileapps;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class MainPart3 {
     /*
@@ -17,17 +19,42 @@ public class MainPart3 {
     * */
 
     public static void main(String[] args) {
+        ArrayList<Data> users = new ArrayList<>();
+
+        for (String line : Data.users) {
+            users.add(new Data(line));
+        }
+
+        ArrayList<Data> otherUsers = new ArrayList<>();
+
+        for (String line : Data.otherUsers) {
+            otherUsers.add(new Data(line));
+        }
+
+        HashSet<Data> bothUsers = new HashSet<>();
+
+
+        for (Data user : users) {
+            for (Data otherUser : otherUsers) {
+                if (user.equals(otherUser)) {
+                    bothUsers.add(user);
+                }
+            }
+        }
+
+        for (Data user : bothUsers) {
+            System.out.println(user);
+        }
+
         //example call
         //int[] input = {}; // output {}
-        int[] input = {1}; // output {1}
+        //int[] input = {1}; // output {1}
         //int[] input = {1,2,3,4}; // output {1,2,3,4}
         //int[] input = {1,2,3,4,4,4,4,4,5,6}; // output {1,2,3,4}
         //int[] input = {1,2,3,-1,4,5,8,20,25,1,1,4,6}; // output {-1,4,5,8,20,25}
         //int[] input = {1,2,3,1,1,1,2,3,4,1,1,2,4,6,7}; // output{1,2,4,6,7}
         //int[] input = {1,2,3,2,5,2,4,6,7}; // output {2,4,6,7}
-        int[] result = printLongestSequence(input);
-        System.out.println(Arrays.toString(input));
-        System.out.println(Arrays.toString(result));
+        //int[] result = printLongestSequence(input);
     }
 
     public static int[] printLongestSequence(int[] input){
