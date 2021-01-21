@@ -1,0 +1,42 @@
+# Task 1: Multiplication
+
+# Initialize A and B to two positive numbers that are guaranteed to be
+# representable in a 32-bit Two's Complement binary number.
+A: 5;
+B: 6;
+4: 2147483647;
+# The resulting high bits should be stored in the C register, and the low bits
+# in the D register. For A = 5 and B = 6, C would be 0, and D would be 30.
+
+# Your Code Here
+F: 1;
+
+LBL LOOP_START;            # Start our loop.
+MV 1, B;
+AND 1, F;
+SF 1;
+BIZ LSB_FALSE;
+MV E, A;
+GO LSB_END;
+LBL LSB_FALSE;
+MV E, 5;
+LBL LSB_END;
+
+ADD C, E;                  # Add E to C
+
+MV 1, C;                   # Move C to temp register 1
+AND 1, 6;                  # Get the LSB of C
+MV 2, 4;                   # Reset the 2 register to the max int
+ADD 1, 2;                  # add the two numbers
+MV 2, 4;                   # Reset the 2 register to the max int
+NOT 2, 2;                  # Only include the left most bit
+AND 1, 2;                  # And our two together
+RS C, C;                   # Shift C
+RS D, D;                   # Shift D
+ADD D, 1;                  # Add previous C's LSB to D
+
+LS F, F;                   # Shift F to the left.
+SF F;                      # If the counter was 0 on our previous iteration,
+BIZ LOOP_END;              # then we exit the loop,
+GO LOOP_START;             # Otherwise we start over.
+LBL LOOP_END;

@@ -1,0 +1,58 @@
+# Task 2: Maximum
+# Your goal for this task is to set a register to the
+# maximum of two registers
+# The A and B registers will be initialized with
+# arbitrary values
+# The C register should hold the maximum of A and B
+
+# Note that the initial values for A and B are just
+# an example.
+# Your code should work for any values of A and B
+A: 5; # Initialize the A register to 5
+B: 7; # Initialize the B register to 7
+C: 0; # Initialize the C register to 0 - DO NOT CHANGE
+
+# Goal:
+#
+#   C = MAX(A, B)
+#
+# If A = 3 and B = 4, then C = 4
+# If A = 2 and B = -3, then C = 2
+# If A = 5 and B = 5, then C = 5
+
+# IF statements in VMAL:
+# If you wanted to implment the following C code in VMAL,
+#
+#   if (A == 0) {
+#     // STUFF
+#   }
+#
+# then the resulting VMAL would look something as follows:
+#
+#   SF A;
+#   BIZ IF_START_1;
+#   GO IF_END_1;
+#   LBL IF_START_1;
+#   // STUFF (translated to VMAL)
+#   LBL IF_END_1;
+#
+# In order to do conditional statements with VMAL, you are
+# going to have to be creative!
+
+# Note: if you want to use BIN or BIZ, you must first
+# do the SF operation to set the N and Z flags.
+
+# Start your code here
+
+MV D, A;
+NOT E, B;
+ADD E, 6;
+ADD D, E;
+SF D;
+BIN START;
+
+MV C, A;
+GO END;
+LBL START;
+MV C, B;
+LBL END;
