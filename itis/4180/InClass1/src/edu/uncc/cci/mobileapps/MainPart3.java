@@ -38,6 +38,7 @@ public class MainPart3 {
             for (Data otherUser : otherUsers) {
                 if (user.equals(otherUser)) {
                     bothUsers.add(user);
+                    break;
                 }
             }
         }
