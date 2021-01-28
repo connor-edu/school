@@ -5,9 +5,7 @@
 
 package edu.uncc.cci.mobileapps;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.*;
 
 public class MainPart3 {
     /*
@@ -19,29 +17,31 @@ public class MainPart3 {
     * */
 
     public static void main(String[] args) {
-        ArrayList<Data> users = new ArrayList<>();
+        Set<Data> users = new HashSet<Data>();
 
         for (String line : Data.users) {
             users.add(new Data(line));
         }
 
-        ArrayList<Data> otherUsers = new ArrayList<>();
+        Set<Data> otherUsers = new HashSet<Data>();
 
         for (String line : Data.otherUsers) {
             otherUsers.add(new Data(line));
         }
 
-        HashSet<Data> bothUsers = new HashSet<>();
+        users.retainAll(otherUsers);
 
+        ArrayList<Data> bothUsers = new ArrayList<>(users);
 
-        for (Data user : users) {
-            for (Data otherUser : otherUsers) {
-                if (user.equals(otherUser)) {
-                    bothUsers.add(user);
-                    break;
-                }
+        bothUsers.sort(new Comparator<Data>(){
+
+            @Override
+            public int compare(Data c1, Data c2)
+            {
+                // ignoring case
+                return c1.state.compareTo(c2.state);
             }
-        }
+        });
 
         for (Data user : bothUsers) {
             System.out.println(user);

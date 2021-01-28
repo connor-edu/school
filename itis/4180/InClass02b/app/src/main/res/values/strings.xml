@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">InClass02b</string>
+    <string name="inches">Inches:</string>
+    <string name="enter_distance">Enter Distance</string>
+    <string name="result">Result:</string>
+    <string name="to_meters">To Meters</string>
+    <string name="to_feet">To Feet</string>
+    <string name="to_miles">To Miles</string>
+    <string name="clear_all">Clear All</string>
+    <string name="convert">Convert</string>
+</resources>
