@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">InClass03</string>
+    <string name="name">Name:</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="dept">Dept:</string>
+    <string name="id">ID:</string>
+    <string name="email">Email:</string>
+    <string name="select">Select</string>
+    <string name="computer_science">Computer Science</string>
+    <string name="software_info_systems">Software Info. Systems</string>
+    <string name="bio_informatics">Bio Informatics</string>
+    <string name="data_science">Data Science</string>
+    <string name="cancel">Cancel</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_id">Enter ID</string>
+    <string name="submit">Submit</string>
+</resources>
